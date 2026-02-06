@@ -1,0 +1,14 @@
+pandas
+numpy==1.26.4
+
+langchain==0.3.13
+langchain-community==0.3.13
+langchain-core==0.3.28
+langchain-text-splitters==0.3.4
+
+sentence-transformers
+huggingface-hub==0.27.0
+tokenizers==0.20.3
+torch
+
+faiss-cpu

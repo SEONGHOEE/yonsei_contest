@@ -1,0 +1,33 @@
+services:
+  airflow:
+    image: apache/airflow:2.8.4-python3.10
+    container_name: airflow
+    restart: always
+
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - ./requirements.txt:/requirements.txt
+
+    ports:
+      - "8081:8080"
+
+    command: >
+      bash -c "
+      pip install --no-cache-dir -r /requirements.txt &&
+      airflow db init &&
+      airflow users create \
+        --username sh1839 \
+        --password sh1839 \
+        --firstname admin \
+        --lastname admin \
+        --role Admin \
+        --email admin@example.com || true &&
+      airflow webserver & airflow scheduler
+      "
