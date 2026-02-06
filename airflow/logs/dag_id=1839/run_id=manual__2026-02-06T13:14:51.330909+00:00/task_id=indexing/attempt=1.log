@@ -1,0 +1,15 @@
+[2026-02-06T13:14:57.467+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 1839.indexing manual__2026-02-06T13:14:51.330909+00:00 [queued]>
+[2026-02-06T13:14:57.470+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 1839.indexing manual__2026-02-06T13:14:51.330909+00:00 [queued]>
+[2026-02-06T13:14:57.470+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-02-06T13:14:57.474+0000] {taskinstance.py:2217} INFO - Executing <Task(_PythonDecoratedOperator): indexing> on 2026-02-06 13:14:51.330909+00:00
+[2026-02-06T13:14:57.476+0000] {standard_task_runner.py:60} INFO - Started process 218 to run task
+[2026-02-06T13:14:57.478+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', '1839', 'indexing', 'manual__2026-02-06T13:14:51.330909+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/architecture.py', '--cfg-path', '/tmp/tmpagkn_pe3']
+[2026-02-06T13:14:57.478+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask indexing
+[2026-02-06T13:14:57.491+0000] {task_command.py:423} INFO - Running <TaskInstance: 1839.indexing manual__2026-02-06T13:14:51.330909+00:00 [running]> on host ab533b301556
+[2026-02-06T13:14:57.584+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='1839' AIRFLOW_CTX_TASK_ID='indexing' AIRFLOW_CTX_EXECUTION_DATE='2026-02-06T13:14:51.330909+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-06T13:14:51.330909+00:00'
+[2026-02-06T13:14:57.592+0000] {logging_mixin.py:188} WARNING - /opt/airflow/dags/architecture.py:72 LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-huggingface package and should be used instead. To use it run `pip install -U :class:`~langchain-huggingface` and import as `from :class:`~langchain_huggingface import HuggingFaceEmbeddings``.
+[2026-02-06T13:14:59.068+0000] {SentenceTransformer.py:219} INFO - Use pytorch device_name: cpu
+[2026-02-06T13:14:59.068+0000] {SentenceTransformer.py:227} INFO - Load pretrained SentenceTransformer: jhgan/ko-sroberta-multitask
+[2026-02-06T13:19:28.766+0000] {python.py:202} INFO - Done. Returned value was: None
+[2026-02-06T13:19:28.862+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-02-06T13:19:28.895+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

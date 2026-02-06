@@ -14,7 +14,8 @@ services:
       - ./data:/opt/airflow/data
       - ./logs:/opt/airflow/logs
       - ./requirements.txt:/requirements.txt
-
+      - ./airflow_db:/opt/airflow 
+      
     ports:
       - "8081:8080"
 
