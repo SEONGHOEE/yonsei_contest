@@ -1,6 +1,6 @@
 #### current status
 
-'''
+```
 airflow/
 │   └── docker-compose.yaml 
 ├── dags/
@@ -14,6 +14,5 @@ airflow/
 │   └── faiss/
 │       └── course_index/
 └── requirements.txt 
-'''
-
-
+        
+```
